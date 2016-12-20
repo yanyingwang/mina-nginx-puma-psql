@@ -5,6 +5,7 @@ require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 require 'mina/puma'
 require 'mina/nginx'
+require_relative 'mina-psql-dump'
 
 
 # Basic settings:
