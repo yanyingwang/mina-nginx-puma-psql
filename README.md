@@ -1,6 +1,24 @@
 # quickly configure your rails app's deployment with mina nginx puma and psql
 
 
+## mina version
+
+This repo base on mina verion 1.0.0, which is difference with version pre 0.3, reference to this article: 
+<https://github.com/mina-deploy/mina/blob/master/docs/migrating.md>
+
+
+## Gemfile
+
+Your Rails's Gemfile should include below lines:
+
+~~~ruby
+gem 'mina'
+gem 'mina-whenever', :require => false
+gem 'mina-puma', :require => false
+gem 'mina-nginx', :require => false
+~~~
+
+
 
 ## files in config and lib dir
 
@@ -11,7 +29,7 @@ cp files in `config/*` and `lib/*` to your rails app's same name dir.
 
 ## config it
 
-modify `username` and `appname` and others in content of file `config/deploy`.
+modify `username` `user` `appname` and others in content of file `config/deploy`.
 
 
 
