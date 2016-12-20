@@ -24,6 +24,10 @@ cp `config/puma.rb` to server `~/username/appname/shared/config/`.
 
 
 
+## nginx init
+
+reference file `nginx-server.conf` to configure your server's nignx 
+
 
 
 ## usage
@@ -36,9 +40,12 @@ cp `config/puma.rb` to server `~/username/appname/shared/config/`.
 
     $ mina puma:start -vv
 
+    $ mina nginx restart
+
     $ mina git:clone
 
     $ mina deploy force_assets=1
+
 
 
 
