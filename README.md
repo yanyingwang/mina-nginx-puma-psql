@@ -3,8 +3,7 @@
 
 ## mina version
 
-This repo base on mina verion 1.0.0, which is difference with version pre 0.3, reference to this article: 
-<https://github.com/mina-deploy/mina/blob/master/docs/migrating.md>
+mina version this repo is with 0.3.8, that I didn't use version 1.0.0 cause of too much bugs with new version.
 
 
 ## Gemfile
@@ -13,7 +12,6 @@ Your Rails's Gemfile should include below lines:
 
 ~~~ruby
 gem 'mina'
-gem 'mina-whenever', :require => false
 gem 'mina-puma', :require => false
 gem 'mina-nginx', :require => false
 ~~~
