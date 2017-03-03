@@ -6,6 +6,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 require 'mina/puma'
 require 'mina/nginx'
 require_relative 'mina-psql-dump'
+require_relative 'mina-whenever'
 
 
 # Basic settings:
@@ -99,11 +100,18 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
-      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      #queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
+      #queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      invoke 'whenever:update'
       #invoke 'puma:phased_restart'
+      #invoke 'puma:restart'
     end
   end
+end
+
+task :restart do
+  queue %[echo '-----> Restarting Rails app']
+  queue "touch #{deploy_to}/shared/tmp/restart.txt"
 end
 
 # For help in making your deploy script, see the Mina documentation:
