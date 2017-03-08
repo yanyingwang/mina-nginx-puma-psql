@@ -77,3 +77,10 @@ restore synced db file to local db:
 
     $ rake psql:restore
 
+
+
+
+
+### add
+
+    $ mina 'run[gem install bundler]'
