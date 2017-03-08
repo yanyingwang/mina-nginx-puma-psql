@@ -11,7 +11,7 @@ mina version this repo is with 0.3.8, that I didn't use version 1.0.0 cause of t
 Your Rails's Gemfile should include below lines:
 
 ~~~ruby
-gem 'mina'
+gem 'mina', '~> 0.3.8', require: false
 gem 'mina-puma', :require => false
 gem 'mina-nginx', :require => false
 ~~~
