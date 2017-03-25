@@ -50,7 +50,12 @@ reference file `nginx-server.conf` to configure your server's nignx
 
 ### mina tasks
 
+
+    $ mina --tasks
+
     $ mina tasks
+
+    $ mina 'rake[db:create]'
 
     $ mina rails:db_create
 
