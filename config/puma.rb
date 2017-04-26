@@ -16,6 +16,7 @@ environment rails_env
 
 # Set up socket location
 bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
+prune_bundler
 
 # Logging
 stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
