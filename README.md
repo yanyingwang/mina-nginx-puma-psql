@@ -45,12 +45,24 @@ cp `config/puma.rb` to server `~/username/appname/shared/config/`.
 reference file `nginx-server.conf` to configure your server's nignx 
 
 
+## workaround for bundle not found that can not 'rake db:create' in server.
+1. git clone source to server dir.
+2. cd dir.
+3. `gem install bundler`
+4. `bundle`
+5. `RAIL_ENV=production rake db:create`
 
 ## usage
 
+
 ### mina tasks
 
+
+    $ mina --tasks
+
     $ mina tasks
+
+    $ mina 'rake[db:create]'
 
     $ mina rails:db_create
 
@@ -62,6 +74,7 @@ reference file `nginx-server.conf` to configure your server's nignx
 
     $ mina deploy force_assets=1
 
+    $ mina 'run[gem install bundler]'
 
 
 
@@ -81,6 +94,3 @@ restore synced db file to local db:
 
 
 
-### add
-
-    $ mina 'run[gem install bundler]'
